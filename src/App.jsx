@@ -58,6 +58,7 @@ function useLiveIndices() {
     setLastUpdated(new Date());
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => { fetchAll(); const id = setInterval(fetchAll, 30000); return () => clearInterval(id); }, []);
   return { data, lastUpdated, marketOpen, refresh: fetchAll };
 }
